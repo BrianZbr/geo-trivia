@@ -42,6 +42,10 @@ class Scores:
                     user_high = None
             else:
                 user_high = None
+        else:
+            user_high = None
+            record_holder = None
+            record_high = None
         return (user_high, record_holder, record_high)
 
     def report_results(self):
