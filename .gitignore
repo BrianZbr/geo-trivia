@@ -1,0 +1,6 @@
+country-json
+*.pyc
+*.old
+*.pkl
+*.bak
+*.zip
