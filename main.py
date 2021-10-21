@@ -114,6 +114,7 @@ def main():
             game.start_game()
             new_game = False
         elif reuse_settings:
+            game.__init__(data)
             game.score = 0
             game.question_counter = 1
             game.username, game.region, game.categories = reuse_settings
