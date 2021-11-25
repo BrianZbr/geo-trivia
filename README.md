@@ -8,7 +8,7 @@ To run locally, clone or download this repository, then clone or download countr
 
 For example:
 ```bash
-git clone TODO
+git clone https://github.com/BrianZbr/geo-trivia
 cd geo-trivia
 git clone https://github.com/samayo/country-json
 ```
