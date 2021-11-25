@@ -1,3 +1,4 @@
+import os
 import json
 import random
 
@@ -5,11 +6,10 @@ import random
 class Data:
     JSON_FILES = {
         # Keys of this dictionary match those used in the country-json file indicated by the path value.
-        # TODO make this OS agnostic with os.path.join
-        "location": r'.\country-json\src\country-by-region-in-world.json',
-        "city": r'.\country-json\src\country-by-capital-city.json',
-        "languages": r'.\country-json\src\country-by-languages.json',
-        "dish": r'.\country-json\src\country-by-national-dish.json'
+        "location": r'./country-json/src/country-by-region-in-world.json',
+        "city": r'./country-json/src/country-by-capital-city.json',
+        "languages": r'./country-json/src/country-by-languages.json',
+        "dish": r'./country-json/src/country-by-national-dish.json'
     }
 
     EXCLUDED_COUNTRIES = {
@@ -62,8 +62,11 @@ class Data:
         '''Collects the contents of JSON files into a dictionary of raw data'''
         self.raw_data = {}
         for topic in self.JSON_FILES:
+            # adjust filepath for OS
+            filepath = os.path.relpath(
+                self.JSON_FILES[topic].replace('\\', os.sep))
             self.raw_data[topic] = json.load(
-                open(self.JSON_FILES[topic], encoding='utf-8'))
+                open(filepath, encoding='utf-8'))
         return self.raw_data
 
     def split_list(self, items):
