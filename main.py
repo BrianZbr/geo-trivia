@@ -53,7 +53,6 @@ class Game:
 
     def start_game(self):
         '''Guides user through the initial decisions that must be set before asking questions.'''
-        print("\nWorld Geography Trivia Game \n")
         # TODO enter name for previous user by default
         if self.TESTING:
             self.username, self.region, self.categories = self.TEST_VALUES
@@ -105,6 +104,7 @@ class Game:
 
 def main():
     '''Play rounds of trivia repeatedly until user exits.'''
+    print("\nWorld Geography Trivia Game \n")
     data = Data()
     new_game = True
     reuse_settings = False
